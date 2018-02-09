@@ -24,6 +24,10 @@ class LiveTvDelegateAdapter : ViewTypeDelegateAdapter {
         fun bind(item:LiveTv) =
                 with(itemView){
                     Picasso.with(tv_logo.context).load(item.logo).into(tv_logo);
+
+                    super.itemView.setOnClickListener{
+                        RxBus.get().send(item)
+                    }
                 }
 
     }

@@ -60,4 +60,6 @@ dependencies {
     //RxJava
     implementation "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
     implementation "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
+    implementation 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
 }
