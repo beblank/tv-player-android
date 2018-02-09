@@ -8,7 +8,7 @@ import retrofit2.http.Path
 /**
  * Created by adit on 9/3/2017.
  */
-interface GithubService {
+interface LiveTvService {
     @GET("api/livetv")
     fun liveTvData(): Observable<List<LiveTv>>
 }

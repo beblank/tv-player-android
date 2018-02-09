@@ -1,7 +1,7 @@
 package com.adit.kotlin_rxjava_dagger_retrofit_boilerplate
 
 import com.adit.kotlin_rxjava_dagger_retrofit_boilerplate.commons.Utils
-import com.adit.kotlin_rxjava_dagger_retrofit_boilerplate.network.GithubService
+import com.adit.kotlin_rxjava_dagger_retrofit_boilerplate.network.LiveTvService
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers
@@ -19,7 +19,7 @@ class MainModule {
 
     @Provides
     @Singleton
-    fun provideGithubUserData():GithubService{
+    fun provideLiveTvData():LiveTvService{
         val url = "http://10.0.2.2:9000"
 
         val clientBuilder: OkHttpClient.Builder = Utils.buildClient()
@@ -31,7 +31,7 @@ class MainModule {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
                 .build()
 
-        return retrofit.create(GithubService::class.java)
+        return retrofit.create(LiveTvService::class.java)
     }
 
 }
