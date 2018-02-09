@@ -20,10 +20,12 @@ class MainModule {
     @Provides
     @Singleton
     fun provideGithubUserData():GithubService{
+        val url = "http://10.0.2.2:9000"
+
         val clientBuilder: OkHttpClient.Builder = Utils.buildClient()
 
         val retrofit = Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
+                .baseUrl(url)
                 .client(clientBuilder.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
